@@ -1,4 +1,2 @@
 # software porject
-by gdg
-jnjnjnjn
-dsd
+## pull (fetch + marge) test
