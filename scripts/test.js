@@ -15,6 +15,7 @@ process.on('unhandledRejection', err => {
 // Ensure environment variables are read.
 require('../config/env');
 
+<<<<<<< HEAD
 
 const jest = require('jest');
 const execSync = require('child_process').execSync;
@@ -46,6 +47,14 @@ if (
   // https://github.com/facebook/create-react-app/issues/5210
   const hasSourceControl = isInGitRepository() || isInMercurialRepository();
   argv.push(hasSourceControl ? '--watch' : '--watchAll');
+=======
+const jest = require('jest');
+const argv = process.argv.slice(2);
+
+// Watch unless on CI or in coverage mode
+if (!process.env.CI && argv.indexOf('--coverage') < 0) {
+  argv.push('--watch');
+>>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
 }
 
 

@@ -14,12 +14,20 @@ process.on('unhandledRejection', err => {
 // Ensure environment variables are read.
 require('../config/env');
 
+<<<<<<< HEAD
 
 const path = require('path');
 const chalk = require('react-dev-utils/chalk');
 const fs = require('fs-extra');
 const webpack = require('webpack');
 const configFactory = require('../config/webpack.config');
+=======
+const path = require('path');
+const chalk = require('chalk');
+const fs = require('fs-extra');
+const webpack = require('webpack');
+const config = require('../config/webpack.config.prod');
+>>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
 const paths = require('../config/paths');
 const checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
 const formatWebpackMessages = require('react-dev-utils/formatWebpackMessages');
@@ -36,13 +44,17 @@ const useYarn = fs.existsSync(paths.yarnLockFile);
 const WARN_AFTER_BUNDLE_GZIP_SIZE = 512 * 1024;
 const WARN_AFTER_CHUNK_GZIP_SIZE = 1024 * 1024;
 
+<<<<<<< HEAD
 const isInteractive = process.stdout.isTTY;
 
+=======
+>>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
 // Warn and crash if required files are missing
 if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
   process.exit(1);
 }
 
+<<<<<<< HEAD
 // Generate configuration
 const config = configFactory('production');
 
@@ -55,6 +67,11 @@ checkBrowsers(paths.appPath, isInteractive)
     // This lets us display how much they changed later.
     return measureFileSizesBeforeBuild(paths.appBuild);
   })
+=======
+// First, read the current file sizes in build directory.
+// This lets us display how much they changed later.
+measureFileSizesBeforeBuild(paths.appBuild)
+>>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
   .then(previousFileSizes => {
     // Remove all content but keep the directory so that
     // if you're in it, you don't end up in Trash
@@ -110,6 +127,7 @@ checkBrowsers(paths.appPath, isInteractive)
       printBuildError(err);
       process.exit(1);
     }
+<<<<<<< HEAD
   )
   .catch(err => {
     if (err && err.message) {
@@ -151,6 +169,21 @@ function build(previousFileSizes) {
           stats.toJson({ all: false, warnings: true, errors: true })
         );
       }
+=======
+  );
+
+// Create the production build and print the deployment instructions.
+function build(previousFileSizes) {
+  console.log('Creating an optimized production build...');
+
+  let compiler = webpack(config);
+  return new Promise((resolve, reject) => {
+    compiler.run((err, stats) => {
+      if (err) {
+        return reject(err);
+      }
+      const messages = formatWebpackMessages(stats.toJson({}, true));
+>>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
       if (messages.errors.length) {
         // Only keep the first error. Others are often indicative
         // of the same problem, but confuse the reader with noise.
@@ -173,7 +206,10 @@ function build(previousFileSizes) {
         );
         return reject(new Error(messages.warnings.join('\n\n')));
       }
+<<<<<<< HEAD
 
+=======
+>>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
       return resolve({
         stats,
         previousFileSizes,

@@ -8,7 +8,11 @@
       "type": "image/x-icon"
     }
   ],
+<<<<<<< HEAD
   "start_url": ".",
+=======
+  "start_url": "./index.html",
+>>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
