@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
 import React, { Component, Fragment } from 'react'
 import HeaderContainer from "containers/Commons/HeaderContainer"
 import Footer from "components/Commons/Footer"
@@ -72,6 +75,7 @@ class ClientTemplate extends Component {
     }
 }
 
+<<<<<<< HEAD
 export default ClientTemplate
 =======
 import React, { Component } from "react";
@@ -101,3 +105,6 @@ class ClientTemplate extends Component {
 
 export default ClientTemplate;
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+export default ClientTemplate
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f

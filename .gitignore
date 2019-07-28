@@ -1,4 +1,15 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+node_modules
+build
+.DS_Store
+.env.local
+.vscode
+deploy.sh
+_backup_
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -22,6 +33,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+<<<<<<< HEAD
 =======
 node_modules
 build
@@ -31,3 +43,9 @@ build
 deploy.sh
 _backup_
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+
+#eidtor
+.idea
+>>>>>>> 9e041528fd422b3137dac7f398a8a83f4ef35871
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f

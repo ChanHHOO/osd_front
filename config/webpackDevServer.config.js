@@ -2,17 +2,25 @@
 
 const errorOverlayMiddleware = require('react-dev-utils/errorOverlayMiddleware');
 <<<<<<< HEAD
+<<<<<<< HEAD
 const evalSourceMapMiddleware = require('react-dev-utils/evalSourceMapMiddleware');
 const noopServiceWorkerMiddleware = require('react-dev-utils/noopServiceWorkerMiddleware');
 const ignoredFiles = require('react-dev-utils/ignoredFiles');
 const paths = require('./paths');
 const fs = require('fs');
 =======
+=======
+const evalSourceMapMiddleware = require('react-dev-utils/evalSourceMapMiddleware');
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
 const noopServiceWorkerMiddleware = require('react-dev-utils/noopServiceWorkerMiddleware');
 const ignoredFiles = require('react-dev-utils/ignoredFiles');
 const config = require('./webpack.config.dev');
 const paths = require('./paths');
+<<<<<<< HEAD
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+const fs = require('fs');
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
 
 const protocol = process.env.HTTPS === 'true' ? 'https' : 'http';
 const host = process.env.HOST || '0.0.0.0';
@@ -26,12 +34,17 @@ module.exports = function(proxy, allowedHost) {
     // However, it made several existing use cases such as development in cloud
     // environment or subdomains in development significantly more complicated:
 <<<<<<< HEAD
+<<<<<<< HEAD
     // https://github.com/facebook/create-react-app/issues/2271
     // https://github.com/facebook/create-react-app/issues/2233
 =======
     // https://github.com/facebookincubator/create-react-app/issues/2271
     // https://github.com/facebookincubator/create-react-app/issues/2233
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+    // https://github.com/facebook/create-react-app/issues/2271
+    // https://github.com/facebook/create-react-app/issues/2233
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
     // While we're investigating better solutions, for now we will take a
     // compromise. Since our WDS configuration only serves files in the `public`
     // folder we won't consider accessing them a vulnerability. However, if you
@@ -73,6 +86,7 @@ module.exports = function(proxy, allowedHost) {
     // It is important to tell WebpackDevServer to use the same "root" path
     // as we specified in the config. In development, we always serve from /.
 <<<<<<< HEAD
+<<<<<<< HEAD
     publicPath: '/',
     // WebpackDevServer is noisy by default so we emit custom message instead
     // by listening to the compiler events with `compiler.hooks[...].tap` calls above.
@@ -83,19 +97,27 @@ module.exports = function(proxy, allowedHost) {
     // https://github.com/facebook/create-react-app/issues/1065
 =======
     publicPath: config.output.publicPath,
+=======
+    publicPath: '/',
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
     // WebpackDevServer is noisy by default so we emit custom message instead
     // by listening to the compiler events with `compiler.plugin` calls above.
     quiet: true,
     // Reportedly, this avoids CPU overload on some systems.
     // https://github.com/facebookincubator/create-react-app/issues/293
     // src/node_modules is not ignored to support absolute imports
+<<<<<<< HEAD
     // https://github.com/facebookincubator/create-react-app/issues/1065
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+    // https://github.com/facebook/create-react-app/issues/1065
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
     watchOptions: {
       ignored: ignoredFiles(paths.appSrc),
     },
     // Enable HTTPS if the HTTPS environment variable is set to 'true'
     https: protocol === 'https',
+<<<<<<< HEAD
 <<<<<<< HEAD
     host,
     overlay: false,
@@ -109,11 +131,21 @@ module.exports = function(proxy, allowedHost) {
       // Paths with dots should still use the history fallback.
       // See https://github.com/facebookincubator/create-react-app/issues/387.
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+    host,
+    overlay: false,
+    historyApiFallback: {
+      // Paths with dots should still use the history fallback.
+      // See https://github.com/facebook/create-react-app/issues/387.
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
       disableDotRule: true,
     },
     public: allowedHost,
     proxy,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
     before(app, server) {
       if (fs.existsSync(paths.proxySetup)) {
         // This registers user provided middleware for proxy reasons
@@ -125,20 +157,27 @@ module.exports = function(proxy, allowedHost) {
       // This lets us open files from the runtime error overlay.
       app.use(errorOverlayMiddleware());
 
+<<<<<<< HEAD
 =======
     before(app) {
       // This lets us open files from the runtime error overlay.
       app.use(errorOverlayMiddleware());
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
       // This service worker file is effectively a 'no-op' that will reset any
       // previous service worker registered for the same host:port combination.
       // We do this in development to avoid hitting the production cache if
       // it used the same host and port.
 <<<<<<< HEAD
+<<<<<<< HEAD
       // https://github.com/facebook/create-react-app/issues/2272#issuecomment-302832432
 =======
       // https://github.com/facebookincubator/create-react-app/issues/2272#issuecomment-302832432
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+      // https://github.com/facebook/create-react-app/issues/2272#issuecomment-302832432
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
       app.use(noopServiceWorkerMiddleware());
     },
   };

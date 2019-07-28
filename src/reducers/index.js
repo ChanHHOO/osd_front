@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
 
 
 import { combineReducers } from 'redux'
 
+<<<<<<< HEAD
 export default combineReducers({})
 =======
 import Authentication from "./Authentication";
@@ -67,3 +71,6 @@ export default combineReducers({
     MessageDetail
 });
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+export default combineReducers({})
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f

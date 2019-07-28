@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
@@ -49,6 +52,10 @@ function App() {
           <Route path="/messages" component={MessagesPage} />
           <Route path="/signup" component={SignUpPage} />
           <Route component={NotFoundPage} />
+<<<<<<< HEAD
+=======
+
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
         </Switch>
       </ClientTemplate>
     </BrowserRouter>
@@ -56,6 +63,7 @@ function App() {
 }
 
 export default App
+<<<<<<< HEAD
 =======
 import React, { Component } from "react";
 import { connect } from "react-redux";
@@ -136,3 +144,5 @@ const mapDispatchToProps = (dispatch) => {
 
 export default connect(null, mapDispatchToProps)(App);
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f

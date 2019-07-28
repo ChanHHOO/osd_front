@@ -1,6 +1,17 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700&display=swap&subset=korean');
 
+=======
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700&display=swap&subset=korean');
+/* Noto Sans KR
+  (100, Thin) 
+  (300, Light) 
+  (400, Regular) 
+  (500, Medium) 
+  (700, Bold) 
+*/
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont,"Noto Sans KR", sans-serif;
@@ -40,6 +51,7 @@ code {
 }
 .partial-scroll-on::-webkit-scrollbar-thumb {
   background: rgba(255,0,0,0.45) !important;
+<<<<<<< HEAD
 =======
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Serif');
 
@@ -136,4 +148,13 @@ label.checked::after{
       width: 20%!important;
   }
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
+}
+
+li {
+  /* border: 1px solid royalblue; */
+}
+ul {
+  /* border: 1px solid red; */
 }

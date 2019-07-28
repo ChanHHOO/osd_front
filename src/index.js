@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
 import 'core-js/es6/map'
 import 'core-js/es6/set'
 
@@ -24,6 +27,7 @@ import * as serviceWorker from './serviceWorker'
 ReactDOM.render(<App />, document.getElementById('root'))
 serviceWorker.register()
 // serviceWorker.unregister()
+<<<<<<< HEAD
 =======
 import 'core-js/es6/map';
 import 'core-js/es6/set';
@@ -47,3 +51,5 @@ const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById("root"));
 registerServiceWorker();
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f

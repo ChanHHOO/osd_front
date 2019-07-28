@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
 import React, { Component } from 'react'
 import ScrollList from "components/Commons/ScrollList"
 import Design from "components/Designs/Design"
@@ -15,6 +18,7 @@ class DesignListContainer extends Component {
         )
     }
 }
+<<<<<<< HEAD
 export default DesignListContainer
 =======
 import React, { Component } from "react";
@@ -56,3 +60,6 @@ const mapDispatchToProps = (dispatch) => {
 
 export default connect(mapStateToProps, mapDispatchToProps)(DesignListContainer);
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+export default DesignListContainer
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f

@@ -1,13 +1,23 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
 import MenuContext from "Global/Context/GlobalContext"
 
+<<<<<<< HEAD
 // import SignNav from "components/Commons/SignNav/SignNav"
 // import SearchForm from "components/Commons/SearchForm"
 // import Notification from "components/Commons/Notification"
 // import Alarm from "components/Commons/Alarm"
+=======
+// import SearchForm from "components/Commons/SearchForm"
+// import Notification from "components/Commons/Notification"
+// import Alarm from "components/Commons/Alarm"
+import SignNav from "components/Commons/SignNav/SignNav"
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
 
 import logo from "source/logo.png"
 import zoom from "source/zoom.svg"
@@ -46,6 +56,7 @@ class Header extends Component {
         return (
             <Menu className={(this.context ? " hidemenu" : "")}>
                 <ul className={"menu"} style={{ minWidth: "523px", margin: "0px", padding: "0px", listStyle: "none", display: "flex", lineHeight: "29px", verticalAlign: "top" }} >
+<<<<<<< HEAD
                     <li style={{ minWidth: "55px", height: "55px", marginLeft: "10px" }}><a href="/"><img alt="logo" style={{ width: "55px", height: "55px" }} src={logo} /></a></li>
                     <li style={{ minWidth: "55px", height: "29px", marginLeft: "50px", marginTop: "11px" }}><a style={(window.location.pathname === '/design') ? { color: "red" } : { color: "#707070" }} href="/design">디자인</a></li>
                     <li style={{ minWidth: "37px", height: "29px", marginLeft: "50px", marginTop: "11px" }}><a style={(window.location.pathname === '/group') ? { color: "red" } : { color: "#707070" }} href="/group">그룹</a></li>
@@ -56,6 +67,25 @@ class Header extends Component {
                     <li style={{ width: "34px", height: "34px", marginRight: "47px", marginTop: "10px" }}><div style={{ background: `url(${alarm})`, width: "34px", height: "34px", backgroundSize: "100% 100%", opacity: ".5", backgroundRepeat: "no-repeat", backgroundPosition: "center center", border: "none" }} /></li>
                     <li style={{ minWidth: "97px", height: "29px", marginRight: "50px", marginTop: "11px" }}><div style={{ width: "100%", height: "100%", borderBottom: "1.5px solid red", color: "red" }}>디자인 등록</div></li>
                     <li style={{ minWidth: "55px", height: "29px", marginRight: "17px", marginTop: "11px" }}><div style={{ margin: "0", padding: "0", cursor: "pointer" }}>로그인</div></li>
+=======
+                    <li style={{ minWidth: "55px", height: "55px", marginLeft: "10px" }}>
+                        <a href="/"><img alt="logo" style={{ width: "55px", height: "55px" }} src={logo} /></a></li>
+                    <li style={{ minWidth: "55px", height: "29px", marginLeft: "50px", marginTop: "11px" }}>
+                        <a style={(window.location.pathname === '/design') ? { color: "red" } : { color: "#707070" }} href="/design">디자인</a></li>
+                    <li style={{ minWidth: "37px", height: "29px", marginLeft: "50px", marginTop: "11px" }}>
+                        <a style={(window.location.pathname === '/group') ? { color: "red" } : { color: "#707070" }} href="/group">그룹</a></li>
+                    <li style={{ minWidth: "74px", height: "29px", marginLeft: "50px", marginTop: "11px" }}>
+                        <a style={(window.location.pathname === '/designer') ? { color: "red" } : { color: "#707070" }} href="/designer">디자이너</a></li>
+                </ul>
+                <ul style={{ margin: "0px", padding: "0px", listStyle: "none", display: "flex", lineHeight: "29px", verticalAlign: "top" }} >
+                    <li style={{ minWidth: "327px", height: "36px", marginRight: "47px", marginTop: "9px", border: "none" }}>
+                        <input style={{ margin: "0 0", background: `url(${zoom})`, backgroundSize: "21.49px 21.49px", borderRadius: "20px", border: "1.5px solid #707070", backgroundRepeat: "no-repeat", backgroundPosition: "right 12.7px top 4px", textIndent: "10px", width: "327px", height: "36px" }} /></li>
+                    <li style={{ width: "34px", height: "34px", marginRight: "47px", marginTop: "10px" }}>
+                        <div style={{ background: `url(${alarm})`, width: "34px", height: "34px", backgroundSize: "100% 100%", opacity: ".5", backgroundRepeat: "no-repeat", backgroundPosition: "center center", border: "none" }} /></li>
+                    <li style={{ minWidth: "97px", height: "29px", marginRight: "50px", marginTop: "11px" }}>
+                        <div style={{ width: "100%", height: "100%", borderBottom: "1.5px solid red", color: "red" }}>디자인 등록</div></li>
+                    <li style={{ minWidth: "55px", height: "29px", marginRight: "17px", marginTop: "11px" }}><SignNav /></li>
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
                 </ul>
             </Menu>
         )
@@ -63,6 +93,7 @@ class Header extends Component {
 }
 
 export default Header
+<<<<<<< HEAD
 =======
 import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
@@ -637,3 +668,5 @@ class Header extends Component {
 
 export default Header;
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f

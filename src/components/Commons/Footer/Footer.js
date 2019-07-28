@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
 import React, { Component } from 'react'
 // import styled from 'styled-components'
 // import { Link } from 'react-router-dom'
@@ -24,6 +27,7 @@ class Footer extends Component {
 //    </div>
 //</FooterContainer>
 //
+<<<<<<< HEAD
 export default Footer
 =======
 import React, { Component } from "react";
@@ -78,3 +82,6 @@ class Footer extends Component {
 
 export default Footer;
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+export default Footer
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f

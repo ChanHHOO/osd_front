@@ -1,14 +1,20 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
 import React, { Component } from 'react'
 import InfiniteScroll from 'react-infinite-scroller'
 import { Grid, Loader } from 'semantic-ui-react'
 import styled from 'styled-components'
+<<<<<<< HEAD
 =======
 import React, { Component } from "react";
 import InfiniteScroll from "react-infinite-scroller";
 import { Grid, Loader } from "semantic-ui-react";
 import styled from "styled-components";
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
 
 // css styling
 const ScrollContainer = styled.div`
@@ -30,6 +36,9 @@ const ListContainer = styled(Grid)`
 
 class ScrollList extends Component {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
     state = {
         hasMore: true,
         loading: false
@@ -87,6 +96,7 @@ class ScrollList extends Component {
             </ScrollContainer>
         );
     }
+<<<<<<< HEAD
 =======
   state = {
     hasMore: true,
@@ -146,6 +156,8 @@ class ScrollList extends Component {
     );
   }
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
 }
 
 export default ScrollList;

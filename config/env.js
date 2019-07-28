@@ -43,19 +43,27 @@ dotenvFiles.forEach(dotenvFile => {
 // We support resolving modules according to `NODE_PATH`.
 // This lets you use absolute paths in imports inside large monorepos:
 <<<<<<< HEAD
+<<<<<<< HEAD
 // https://github.com/facebook/create-react-app/issues/253.
 =======
 // https://github.com/facebookincubator/create-react-app/issues/253.
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+// https://github.com/facebook/create-react-app/issues/253.
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
 // It works similar to `NODE_PATH` in Node itself:
 // https://nodejs.org/api/modules.html#modules_loading_from_the_global_folders
 // Note that unlike in Node, only *relative* paths from `NODE_PATH` are honored.
 // Otherwise, we risk importing Node.js core modules into an app instead of Webpack shims.
 <<<<<<< HEAD
+<<<<<<< HEAD
 // https://github.com/facebook/create-react-app/issues/1023#issuecomment-265344421
 =======
 // https://github.com/facebookincubator/create-react-app/issues/1023#issuecomment-265344421
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+// https://github.com/facebook/create-react-app/issues/1023#issuecomment-265344421
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
 // We also resolve them to make sure all tools using them work consistently.
 const appDirectory = fs.realpathSync(process.cwd());
 process.env.NODE_PATH = (process.env.NODE_PATH || '')

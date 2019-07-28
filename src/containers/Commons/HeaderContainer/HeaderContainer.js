@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
 import React, { Component } from 'react'
 import Header from "components/Commons/Header"
 
@@ -11,6 +14,7 @@ class HeaderContainer extends Component {
 }
 
 export default HeaderContainer
+<<<<<<< HEAD
 =======
 import React, { Component } from "react";
 import { connect } from "react-redux";
@@ -53,3 +57,5 @@ const mapDispatchToProps = (dispatch) => {
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HeaderContainer));
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f

@@ -2,9 +2,13 @@
 
 const path = require('path');
 <<<<<<< HEAD
+<<<<<<< HEAD
 const camelcase = require('camelcase');
 =======
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+const camelcase = require('camelcase');
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
 
 // This is a custom Jest transformer turning file imports into filenames.
 // http://facebook.github.io/jest/docs/en/webpack.html
@@ -12,6 +16,9 @@ const camelcase = require('camelcase');
 module.exports = {
   process(src, filename) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
     const assetFilename = JSON.stringify(path.basename(filename));
 
     if (filename.match(/\.svg$/)) {
@@ -40,8 +47,11 @@ module.exports = {
     }
 
     return `module.exports = ${assetFilename};`;
+<<<<<<< HEAD
 =======
     return `module.exports = ${JSON.stringify(path.basename(filename))};`;
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
   },
 };

@@ -6,16 +6,23 @@ const url = require('url');
 
 // Make sure any symlinks in the project folder are resolved:
 <<<<<<< HEAD
+<<<<<<< HEAD
 // https://github.com/facebook/create-react-app/issues/637
 =======
 // https://github.com/facebookincubator/create-react-app/issues/637
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+// https://github.com/facebook/create-react-app/issues/637
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
 const appDirectory = fs.realpathSync(process.cwd());
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
 const envPublicUrl = process.env.PUBLIC_URL;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
 function ensureSlash(inputPath, needsSlash) {
   const hasSlash = inputPath.endsWith('/');
   if (hasSlash && !needsSlash) {
@@ -24,6 +31,7 @@ function ensureSlash(inputPath, needsSlash) {
     return `${inputPath}/`;
   } else {
     return inputPath;
+<<<<<<< HEAD
 =======
 function ensureSlash(path, needsSlash) {
   const hasSlash = path.endsWith('/');
@@ -34,6 +42,8 @@ function ensureSlash(path, needsSlash) {
   } else {
     return path;
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
   }
 }
 
@@ -54,6 +64,9 @@ function getServedPath(appPackageJson) {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
 const moduleFileExtensions = [
   'web.mjs',
   'mjs',
@@ -96,6 +109,7 @@ module.exports = {
   yarnLockFile: resolveApp('yarn.lock'),
   testsSetup: resolveModule(resolveApp, 'src/setupTests'),
   proxySetup: resolveApp('src/setupProxy.js'),
+<<<<<<< HEAD
 =======
 // config after eject: we're in ./config/
 module.exports = {
@@ -109,14 +123,22 @@ module.exports = {
   yarnLockFile: resolveApp('yarn.lock'),
   testsSetup: resolveApp('src/setupTests.js'),
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
   appNodeModules: resolveApp('node_modules'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
 };
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
 
 
 
 module.exports.moduleFileExtensions = moduleFileExtensions;
+<<<<<<< HEAD
 =======
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f

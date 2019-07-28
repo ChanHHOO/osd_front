@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import opendesign_style from "opendesign_style"
@@ -29,6 +32,7 @@ class ContentBox extends Component {
     }
 }
 
+<<<<<<< HEAD
 export default ContentBox
 =======
 import React, { Component } from 'react';
@@ -67,3 +71,6 @@ class ContentBox extends Component {
 
 export default ContentBox;
 >>>>>>> d451c5fa80bf0a4cd1c0565cf5cff1f3b0edae71
+=======
+export default ContentBox
+>>>>>>> 390cdf52ed7ead96e5630749dc83fb05a6093b5f
