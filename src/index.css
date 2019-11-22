@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700&display=swap&subset=korean');
 /* Noto Sans KR
-  (100, Thin) 
-  (300, Light) 
-  (400, Regular) 
-  (500, Medium) 
-  (700, Bold) 
+  (100, Thin)
+  (300, Light)
+  (400, Regular)
+  (500, Medium)
+  (700, Bold)
 */
 
 html, body {
@@ -22,7 +22,7 @@ html, body {
 /* border: 1px solid black; */
 /* } */
 code {
-  font-family: source-code-pro, Menlo, Monaco, monospace, 
+  font-family: source-code-pro, Menlo, Monaco, monospace,
   "Courier New", Consolas;
 }
 
@@ -41,7 +41,7 @@ code {
   width: 0px;
 }
 .partical-scroll-none::-webkit-scrollbar * {
-  background: transparent; 
+  background: transparent;
 }
 .partical-scroll-none::-webkit-scrollbar-thumb {
   background: transparent;
@@ -70,7 +70,7 @@ code {
   width: 0px;
 }
 .partical-scroll-none::-webkit-scrollbar * {
-  background: transparent; 
+  background: transparent;
 }
 .partical-scroll-none::-webkit-scrollbar-thumb {
   background: transparent;

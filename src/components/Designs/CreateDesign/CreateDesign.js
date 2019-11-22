@@ -12,8 +12,21 @@ import Logo from "source/logo.png"
 import { Dropdown, Modal } from "semantic-ui-react";
 import ReactCrop from 'react-image-crop';
 import "react-image-crop/dist/ReactCrop.css";
-
 import styled from "styled-components";
+
+import project_image from "source/project_image.PNG"
+import blog_image from "source/blog_image.png"
+
+
+const ExampleImage = styled.div`
+  width : 100%;
+  height : 70%;
+
+  img{
+    width : 80%;
+    height : 140%;
+  }
+`
 
 const MainBanner = styled.div`
 width: 100%;
@@ -220,6 +233,7 @@ const ContentsBox = styled.div`
   display:flex;
   flex-direction:column;
   .title{
+        display:flex;
         min-width:100px;
         height:29px;
         text-align:left;
@@ -495,7 +509,7 @@ const NoInviteMemberBox = styled.div`
 //   margin-right: 17px;
 //   background-color: #EFEFEF !important;
 //   border: 1px solid #707070 !important;
-//   border-radius: 5px !important;  
+//   border-radius: 5px !important;
 // `;
 const LicenseBox = styled.div`
   display: flex;
@@ -612,6 +626,15 @@ const LoadingIconBox = styled.div`
 `
 const SectionContainer = styled.section`
   display: ${props => props.display};
+  
+  .secondSection{
+    display:flex;
+    justify-content:space-around;
+    .typeCheck{
+      position:relative;
+      
+    }
+  }
 `;
 const CropperDialog = styled(Modal)`
   max-width: ${props => props.ratio < 1.0 ? 450 : 650}px;
@@ -629,7 +652,7 @@ const CropperDialog = styled(Modal)`
 `
 
 const emptyCategory = [{ value: 0, text: "" }]
-const scrollmenu = [{ step: 0, txt: "기본 정보", tag: "#basics" }, { step: 1, txt: "부가 정보", tag: "#additional" }, { step: 2, txt: "단계/컨텐츠 정보", tag: "#contenteditor" }]
+const scrollmenu = [{ step: 0, txt: "기본 정보", tag: "#basics" }, { step: 1, txt: "부가 정보", tag: "#additional" }, { step: 2, txt: "타입 선택", tag: "#choiceType" },{ step: 3, txt: "단계/컨텐츠 정보", tag: "#contenteditor" }]
 
 function Peer(props) {
   return (
@@ -646,10 +669,12 @@ class CreateDesign extends Component {
     this.state = {
       crop: { unit: "%", width: 50, aspect: 1 },
       loading: false, designId: null, isMyDesign: false, editor: false,
-      basic: false, additional: false, content: false, step: 0,
+      basic: false, additional: false, content: false, step: 2, // testStep
       showSearch: false, thumbnail: noimg, thumbnail_name: "", cropper: false, is_rectangle: false, grid: false,
       categoryLevel1: null, categoryLevel2: null, alone: false, members: [], addmem: [], delmem: [],
       license1: true, license2: true, license3: true,
+      checkedBlog : true, checkedProject : false,
+      exampleImage:blog_image,
     }
     this.addMember = this.addMember.bind(this);
     this.removeMember = this.removeMember.bind(this);
@@ -660,6 +685,15 @@ class CreateDesign extends Component {
     this.onChangeCategory2 = this.onChangeCategory2.bind(this);
     this.handleOnChangeThumbnail = this.handleOnChangeThumbnail.bind(this);
   }
+  checkedDesignType(type){
+    type === "blog" ?
+        this.setState({checkedBlog : true, checkedProject:false, exampleImage:blog_image})
+        :
+        this.setState({checkedProject:true, checkedBlog:false, exampleImage:project_image});
+
+  }
+
+
   handleOnChangeThumbnail(event) {
     event.preventDefault();
     const reader = new FileReader();
@@ -1028,7 +1062,33 @@ class CreateDesign extends Component {
               </ContentsBox>
             </SectionContainer>
 
-            <SectionContainer display={step === 2 ? "block" : "none"}>
+            <SectionContainer display ={step===2 ? "block" : "none"}>
+              <div className="secondSection">
+                <ContentsBox className="typeCheck">
+                  <div className="title">
+                    <div>블로그 타입</div>
+                    <div style={{paddingLeft:"5px"}}>
+                      <CheckBox2 checked={this.state.checkedBlog} onChange={()=>(this.checkedDesignType("blog"))} />
+                    </div>
+                  </div>
+
+                  <div className="title" style={{paddingTop:"15em"}}>
+                    <div>프로젝트 타입</div>
+                    <div style={{paddingLeft:"5px"}}>
+                      <CheckBox2 checked={this.state.checkedProject} onChange={()=>(this.checkedDesignType("project"))} />
+                    </div>
+                  </div>
+                </ContentsBox>
+
+                <ContentsBox>
+                  <ExampleImage>
+                    <img src={this.state.exampleImage}/>
+                  </ExampleImage>
+                </ContentsBox>
+              </div>
+            </SectionContainer>
+
+            <SectionContainer display={step === 3 ? "block" : "none"}>
               <div>{this.state.grid ? <GridEditor editor={true} isMyDesign={true} design={this.props.DesignDetail} {...this.props} /> :
                 <LoadingBox><LoadingIconBox imageURL={Logo} /><div className="loadingText">단계/컨텐츠 에디터를 가져오고 있습니다...</div></LoadingBox>}</div>
             </SectionContainer>
@@ -1049,6 +1109,14 @@ class CreateDesign extends Component {
                 </CompleteButton>
               </React.Fragment>}
               {step === 2 && <React.Fragment>
+                <BackButton onClick={this.gotoPrevStep}>
+                  <BtnText>뒤로</BtnText>
+                </BackButton>
+                <CompleteButton onClick={this.state.additional ? this.gotoNextStep : undefined} isComplete={this.state.additional}>
+                  <BtnText>다음</BtnText>
+                </CompleteButton>
+              </React.Fragment>}
+              {step === 3 && <React.Fragment>
                 <BackButton onClick={this.gotoPrevStep}><BtnText>뒤로</BtnText></BackButton>
                 <CompleteButton onClick={this.state.content ? this.submit : undefined} isComplete={true}><BtnText>완료</BtnText></CompleteButton>
               </React.Fragment>}
