@@ -779,7 +779,11 @@ class CreateDesign extends Component {
       alert("디자인 부가정보를 모두 작성하셔야 이동하실 수 있습니다.");
       return;
     }
-    if (this.state.basic && this.state.additional && menu.step <= 2) {
+    if ((!this.state.checkedBlog || !this.state.checkedProject) && menu.step > 2){
+      alert("11111");
+      return;
+    }
+    if (this.state.basic && this.state.additional && menu.step <= 3) {
       if (this.state.step === 1 && this.state.designId == null) {
         let designId = null;
         console.log(this.props);
@@ -1112,7 +1116,7 @@ class CreateDesign extends Component {
                 <BackButton onClick={this.gotoPrevStep}>
                   <BtnText>뒤로</BtnText>
                 </BackButton>
-                <CompleteButton onClick={this.state.additional ? this.gotoNextStep : undefined} isComplete={this.state.additional}>
+                <CompleteButton onClick={this.state.checkedBlog || this.state.checkedProject ? this.gotoNextStep : undefined} isComplete={this.state.checkedBlog || this.state.checkedProject}>
                   <BtnText>다음</BtnText>
                 </CompleteButton>
               </React.Fragment>}
