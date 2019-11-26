@@ -13,7 +13,7 @@ import { Dropdown, Modal } from "semantic-ui-react";
 import ReactCrop from 'react-image-crop';
 import "react-image-crop/dist/ReactCrop.css";
 import styled from "styled-components";
-
+import CardSourceDetailContainer from "../../../containers/Designs/CardSourceDetailContainer";
 import project_image from "source/project_image.PNG"
 import blog_image from "source/blog_image.png"
 
@@ -626,13 +626,15 @@ const LoadingIconBox = styled.div`
 `
 const SectionContainer = styled.section`
   display: ${props => props.display};
-  
+  div{
+    border: 1px solid red;
+  }
   .secondSection{
     display:flex;
+    
     justify-content:space-around;
     .typeCheck{
       position:relative;
-      
     }
   }
 `;
@@ -669,7 +671,7 @@ class CreateDesign extends Component {
     this.state = {
       crop: { unit: "%", width: 50, aspect: 1 },
       loading: false, designId: null, isMyDesign: false, editor: false,
-      basic: false, additional: false, content: false, step: 2, // testStep
+      basic: false, additional: false, content: false, step: 0, // testStep
       showSearch: false, thumbnail: noimg, thumbnail_name: "", cropper: false, is_rectangle: false, grid: false,
       categoryLevel1: null, categoryLevel2: null, alone: false, members: [], addmem: [], delmem: [],
       license1: true, license2: true, license3: true,
@@ -740,19 +742,21 @@ class CreateDesign extends Component {
     this.setState({ step: this.state.step - 1 });
   }
   gotoNextStep = async () => {
+    await console.log(this.state.step + "*****************");
     if (this.state.step === 1 && this.state.designId == null) {
       let designId = null;
       console.log(this.props);
       // create design and next stage, next state will be load new design via grid editor
       const { categoryLevel1, categoryLevel2, title, explanation, license1, license2, license3, thumbnail, thumbnail_name } = this.state;
       let data = {
-        is_project: 1, uid: this.props.userInfo.uid,
+        is_project: 1/*this.state.checkedProject ? 1 : 0*/, uid: this.props.userInfo.uid,
         category_level1: categoryLevel1, category_level2: categoryLevel2, explanation: explanation,
         files: [{ key: "thumbnail[]", value: thumbnail, name: thumbnail_name }],
         is_commercial: license1, is_display_creater: license2, is_modify: license3,
         members: { add: this.state.addmem, del: this.state.delmem },
         title: title
       };
+
       // console.log(data);
       this.setState({ loading: true });
       this.props.CreateDesignRequest(data, this.props.token)
@@ -777,10 +781,6 @@ class CreateDesign extends Component {
     }
     if (!this.state.additional && menu.step > 1) {
       alert("디자인 부가정보를 모두 작성하셔야 이동하실 수 있습니다.");
-      return;
-    }
-    if ((!this.state.checkedBlog || !this.state.checkedProject) && menu.step > 2){
-      alert("11111");
       return;
     }
     if (this.state.basic && this.state.additional && menu.step <= 3) {
@@ -1053,7 +1053,7 @@ class CreateDesign extends Component {
                     <span className="textLabel">멤버를 초대하지 않습니다.</span>
                   </NoInviteMemberBox>
                 </div>
-                <HRline />
+                <HRline test/>
                 {/* LICENSE */}
                 <LicenseBox>
                   <div className="title">라이센스</div>
@@ -1093,8 +1093,15 @@ class CreateDesign extends Component {
             </SectionContainer>
 
             <SectionContainer display={step === 3 ? "block" : "none"}>
-              <div>{this.state.grid ? <GridEditor editor={true} isMyDesign={true} design={this.props.DesignDetail} {...this.props} /> :
-                <LoadingBox><LoadingIconBox imageURL={Logo} /><div className="loadingText">단계/컨텐츠 에디터를 가져오고 있습니다...</div></LoadingBox>}</div>
+              {
+
+                this.state.checkedProject ?
+                    this.state.grid ?
+                        <GridEditor editor={true} isMyDesign={true} design={this.props.DesignDetail} {...this.props} /> :
+                        <LoadingBox><LoadingIconBox imageURL={Logo} /><div className="loadingText">단계/컨텐츠 에디터를 가져오고 있습니다...</div></LoadingBox>
+                    :
+                    <CardSourceDetailContainer uid={this.state.designId} edit={true} isTeam={true} />
+              }
             </SectionContainer>
 
             {/* buttons*/}
